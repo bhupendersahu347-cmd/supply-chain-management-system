@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0ea5e9">
+  <title>SupplyFlow | Supply Chain Management</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><div class="brand-mark">S</div><div><strong>SupplyFlow</strong><small>MANAGEMENT SUITE</small></div></div>
+      <div class="workspace"><span class="workspace-icon">▦</span><div><b>Operations</b><small>Workspace</small></div><span class="chevron">⌄</span></div>
+      <div class="nav-label">WORKSPACE</div>
+      <nav id="mainNav">
+        <button class="nav-item active" data-page="dashboard"><span>▥</span> Dashboard</button>
+        <button class="nav-item" data-page="suppliers"><span>♙</span> Suppliers</button>
+        <button class="nav-item" data-page="procurement"><span>▤</span> Procurement</button>
+        <button class="nav-item" data-page="inventory"><span>▦</span> Inventory</button>
+        <button class="nav-item" data-page="orders"><span>⇄</span> Order Management</button>
+        <button class="nav-item" data-page="shipping"><span>♧</span> Logistics & Shipping</button>
+        <button class="nav-item" data-page="analytics"><span>▥</span> Analytics & Reports</button>
+      </nav>
+      <div class="nav-label bottom-label">PREFERENCES</div>
+      <button class="nav-item" id="themeToggle"><span>◐</span> Toggle dark mode</button>
+      <button class="nav-item" data-page="account"><span>⚙</span> Login / Register</button>
+      <div class="sidebar-footer"><div class="avatar">AD</div><div class="profile-name"><b>Admin User</b><small>Workspace admin</small></div><button id="logoutBtn" title="Sign out">↗</button></div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button>
+        <div class="breadcrumb"><span>Workspace</span><b>/</b><strong id="breadcrumbTitle">Dashboard</strong></div>
+        <div class="top-actions">
+          <label class="global-search"><span>⌕</span><input id="globalSearch" placeholder="Search anything..." aria-label="Search anything"><kbd>⌘ K</kbd></label>
+          <button class="icon-button" id="notificationBtn" title="Notifications">♧<i></i></button>
+          <div class="top-avatar">AD</div>
+        </div>
+      </header>
+
+      <section class="content" id="pageContent"></section>
+      <footer class="app-footer"><span>© 2026 SupplyFlow</span><span>Supply chain operations, made simpler.</span></footer>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modalBackdrop">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-header"><div><h2 id="modalTitle">Add item</h2><p id="modalSubtitle">Enter the details below.</p></div><button class="close-modal" id="closeModal" aria-label="Close">×</button></div>
+      <form id="entityForm"><div class="form-grid" id="formFields"></div><div class="modal-actions"><button type="button" class="btn btn-ghost" id="cancelModal">Cancel</button><button type="submit" class="btn btn-primary" id="saveEntity">Save changes</button></div></form>
+    </section>
+  </div>
+  <div class="toast-container" id="toastContainer"></div>
+  <script src="app.js"></script>
+</body>
+</html>
